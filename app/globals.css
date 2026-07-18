@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-slate-gray: #8892b0;
+  --color-light-slate: #a8b2d1;
+  --color-lightest-slate: #ccd6f6;
+  --color-green-accent: #4ade80;
+  --color-green-teal: #64ffda;
+  --color-dark-navy: #1a1a2e;
+  --color-dark-accent: #16162a;
+}
+
 /* ===== CSS Variables ===== */
 :root {
     --slate: #8892b0;

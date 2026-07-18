@@ -129,13 +129,13 @@ export default function Contact() {
 
   return (
     <section id="contact" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12 text-center">
-      <h2 className="text-2xl font-bold text-[#4ade80] mb-8 flex items-center justify-center" data-aos="fade-up">
+      <h2 className="text-2xl font-bold text-green-accent mb-8 flex items-center justify-center" data-aos="fade-up">
         What&apos;s Next?
       </h2>
-      <h3 className="text-4xl font-bold text-[#ccd6f6] mb-4" data-aos="fade-up" data-aos-delay="50">
+      <h3 className="text-4xl font-bold text-lightest-slate mb-4" data-aos="fade-up" data-aos-delay="50">
         Get In Touch
       </h3>
-      <p className="text-[#8892b0] max-w-lg mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+      <p className="text-slate-gray max-w-lg mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
         Let&apos;s Chat! Whether you have a question, a project idea, or just want to connect, I&apos;m always happy to hear from you.
         Drop me a message, and I&apos;ll be in touch soon!
       </p>
@@ -163,7 +163,7 @@ export default function Contact() {
             autoComplete="name"
             required
             aria-required="true"
-            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 ${touched.name && errors.name ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
+            className={`w-full px-4 py-3 border rounded bg-transparent text-lightest-slate text-base outline-none transition-colors duration-300 ${touched.name && errors.name ? 'focus:border-red-500' : 'border-light-slate'}`}
           />
           {touched.name && errors.name && (
             <div className="text-red-500 text-sm mt-1 text-left block" id="name-error">
@@ -187,7 +187,7 @@ export default function Contact() {
             autoComplete="email"
             required
             aria-required="true"
-            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 ${touched.email && errors.email ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
+            className={`w-full px-4 py-3 border rounded bg-transparent text-lightest-slate text-base outline-none transition-colors duration-300 ${touched.email && errors.email ? 'border-red-500' : 'focus:border-green-accent'}`}
           />
           {touched.email && errors.email && (
             <div className="text-red-500 text-sm mt-1 text-left block" id="email-error">
@@ -210,7 +210,7 @@ export default function Contact() {
             onBlur={handleBlur}
             required
             aria-required="true"
-            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 resize-y min-h-[120px] ${touched.message && errors.message ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
+            className={`w-full px-4 py-3 border rounded bg-transparent text-lightest-slate text-base outline-none transition-colors duration-300 resize-y min-h-30 ${touched.message && errors.message ? 'focus:border-red-500' : 'border-light-slate'}`}
           ></textarea>
           {touched.message && errors.message && (
             <div className="text-red-500 text-sm mt-1 text-left block" id="message-error">
@@ -219,7 +219,7 @@ export default function Contact() {
           )}
         </div>
 
-        <button type="submit" className="px-8 py-4 border border-[#4ade80] text-[#4ade80] bg-transparent rounded cursor-pointer text-base transition-colors duration-300 flex items-center justify-center gap-3 mx-auto hover:bg-[#4ade80]/10 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 focus:ring-offset-[#1a1a2e] disabled:opacity-50 disabled:cursor-not-allowed" id="submitBtn" disabled={loading}>
+        <button type="submit" className="px-8 py-4 border border-green-accent text-green-accent bg-transparent rounded text-base transition-colors duration-300 flex items-center justify-center gap-3 mx-auto hover:bg-green-accent/10 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 focus:ring-offset-dark-navy disabled:opacity-50 disabled:cursor-not-allowed" id="submitBtn" disabled={loading}>
           {loading && (
             <svg className="w-4 h-4 animate-spin" id="spinner" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

@@ -28,13 +28,13 @@ export default function DeveloperCodeCard() {
     <div className="relative w-full max-w-md lg:max-w-lg mx-auto aspect-video sm:aspect-auto select-none group" data-aos="fade-left" data-aos-delay="300">
       
       {/* Subtle background green glow */}
-      <div className="absolute inset-0 bg-[#4ade80]/5 rounded-2xl blur-3xl -z-10 group-hover:bg-[#4ade80]/10 transition-all duration-700"></div>
+      <div className="absolute inset-0 bg-green-accent/5 rounded-2xl blur-3xl -z-10 group-hover:bg-green-accent/10 transition-all duration-700"></div>
       
       {/* Glow Ring border effect */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4ade80]/20 via-[#64ffda]/10 to-[#4ade80]/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+      <div className="absolute -inset-0.5 bg-linear-to-r from-green-accent/20 via-green-teal/10 to-green-accent/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
 
       {/* Editor Main Window */}
-      <div className="relative bg-[#16162a] border border-[#374151] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1">
+      <div className="relative bg-dark-accent border border-[#374151] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1">
         
         {/* Editor Top Bar / Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-[#111827] border-b border-[#374151]">
@@ -46,36 +46,36 @@ export default function DeveloperCodeCard() {
           </div>
 
           {/* Active file tab */}
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-[#16162a] rounded-t-lg border-t border-x border-[#374151] text-xs text-[#ccd6f6] font-mono select-none">
-            <span className="text-[#64ffda]">TypeScript</span>
+          <div className="flex items-center gap-1.5 px-3 py-1 bg-dark-accent rounded-t-lg border-t border-x border-[#374151] text-xs text-lightest-slate font-mono select-none">
+            <span className="text-green-teal">TypeScript</span>
             <span>developer.ts</span>
           </div>
 
           {/* Terminal / Edit Status */}
-          <div className="text-[10px] text-[#8892b0] font-mono hidden sm:block">
+          <div className="text-[10px] text-slate-gray font-mono hidden sm:block">
             UTF-8
           </div>
         </div>
 
         {/* Code Content Editor Area */}
-        <div className="p-6 font-mono text-sm leading-relaxed text-[#a8b2d1] overflow-x-auto">
+        <div className="p-6 font-mono text-sm leading-relaxed text-light-slate overflow-x-auto">
           <pre>
             <div>
-              <span className="text-[#64ffda]">const</span>{' '}
-              <span className="text-[#ccd6f6]">developer</span> = {'{'}
+              <span className="text-green-teal">const</span>{' '}
+              <span className="text-lightest-slate">developer</span> = {'{'}
             </div>
             <div className="pl-4">
-              <span className="text-[#a8b2d1]">name</span>:{' '}
-              <span className="text-[#4ade80]">&quot;Sampath Menuka&quot;</span>,
+              <span className="text-light-slate">name</span>:{' '}
+              <span className="text-green-accent">&quot;Sampath Menuka&quot;</span>,
             </div>
             <div className="pl-4">
-              <span className="text-[#a8b2d1]">role</span>:{' '}
-              <span className="text-[#4ade80]">&quot;Full Stack Developer&quot;</span>,
+              <span className="text-light-slate">role</span>:{' '}
+              <span className="text-green-accent">&quot;Full Stack Developer&quot;</span>,
             </div>
             <div className="pl-4">
-              <span className="text-[#a8b2d1]">skills</span>: [
+              <span className="text-light-slate">skills</span>: [
             </div>
-            <div className="pl-8 text-[#4ade80]">
+            <div className="pl-8 text-green-accent">
               &quot;Next.js&quot;,<br />
               &quot;Node.js&quot;,<br />
               &quot;Spring Boot&quot;,<br />
@@ -85,12 +85,12 @@ export default function DeveloperCodeCard() {
               ],
             </div>
             <div className="pl-4">
-              <span className="text-[#a8b2d1]">passion</span>:{' '}
-              <span className="text-[#4ade80]">&quot;Building great products&quot;</span>
+              <span className="text-light-slate">passion</span>:{' '}
+              <span className="text-green-accent">&quot;Building great products&quot;</span>
             </div>
             <div>
               {'};'}
-              <span className="inline-block w-2.5 h-4 bg-[#4ade80] ml-1 align-middle cursor-blink"></span>
+              <span className="inline-block w-2.5 h-4 bg-green-accent ml-1 align-middle cursor-blink"></span>
             </div>
           </pre>
         </div>
@@ -101,7 +101,7 @@ export default function DeveloperCodeCard() {
       {/* Next.js Badge */}
       <FloatingBadge
         name="Next.js"
-        className="top-[-16px] left-[-16px] md:left-[-32px] border-white/20 text-white"
+        className="-top-4 -left-4 md:-left-8 border-white/20 text-white"
         delay="0.5s"
         duration="6s"
         icon={
@@ -116,7 +116,7 @@ export default function DeveloperCodeCard() {
       {/* Node.js Badge */}
       <FloatingBadge
         name="Node.js"
-        className="top-[-28px] right-[40px] md:right-[60px] border-[#4ade80]/20 text-[#4ade80]"
+        className="-top-7 right-10 md:right-15 border-[#4ade80]/20 text-[#4ade80]"
         delay="1.5s"
         duration="5s"
         icon={
@@ -129,7 +129,7 @@ export default function DeveloperCodeCard() {
       {/* Spring Boot Badge */}
       <FloatingBadge
         name="Spring Boot"
-        className="top-[40%] right-[-32px] md:right-[-48px] border-[#22c55e]/20 text-[#22c55e]"
+        className="top-[40%] -right-8 md:-right-12 border-[#22c55e]/20 text-[#22c55e]"
         delay="0s"
         duration="7s"
         icon={
@@ -142,7 +142,7 @@ export default function DeveloperCodeCard() {
       {/* Java Badge */}
       <FloatingBadge
         name="Java"
-        className="bottom-[-16px] right-[-16px] md:right-[-24px] border-[#ea580c]/20 text-[#ea580c]"
+        className="-bottom-4 -right-4 md:-right-6 border-[#ea580c]/20 text-[#ea580c]"
         delay="2s"
         duration="5.5s"
         icon={
@@ -155,7 +155,7 @@ export default function DeveloperCodeCard() {
       {/* MongoDB Badge */}
       <FloatingBadge
         name="MongoDB"
-        className="bottom-[35%] left-[-40px] md:left-[-60px] border-[#10b981]/20 text-[#10b981]"
+        className="bottom-[35%] -left-10 md:-left-15 border-[#10b981]/20 text-[#10b981]"
         delay="1s"
         duration="6.5s"
         icon={
@@ -168,7 +168,7 @@ export default function DeveloperCodeCard() {
       {/* MySQL Badge */}
       <FloatingBadge
         name="MySQL"
-        className="bottom-[-28px] left-[30%] border-[#00758f]/20 text-[#00758f]"
+        className="-bottom-7 left-[30%] border-[#00758f]/20 text-[#00758f]"
         delay="2.5s"
         duration="4.8s"
         icon={

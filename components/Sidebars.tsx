@@ -5,13 +5,13 @@ export default function Sidebars() {
     <>
       {/* Left Social Sidebar */}
       <div className="hidden lg:block fixed bottom-0 left-10 z-10 w-10">
-        <ul className="flex flex-col items-center gap-2 after:content-[''] after:block after:w-[1px] after:h-24 after:bg-[#8892b0] after:mt-4">
+        <ul className="flex flex-col items-center gap-2 after:content-[''] after:block after:w-[1px] after:h-24 after:bg-slate-gray after:mt-4">
           <li>
             <a
               href="https://github.com/sampathmenuka"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 block"
+              className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 block"
               aria-label="Visit Sampath's GitHub profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -24,7 +24,7 @@ export default function Sidebars() {
               href="https://www.linkedin.com/in/sampathmenuka/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 block"
+              className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 block"
               aria-label="Visit Sampath's LinkedIn profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -37,7 +37,7 @@ export default function Sidebars() {
               href="https://x.com/pasindusmc909"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 block"
+              className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 block"
               aria-label="Visit Sampath's X profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -50,7 +50,7 @@ export default function Sidebars() {
               href="https://www.facebook.com/sampath.menuk9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 block"
+              className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 block"
               aria-label="Visit Sampath's Facebook profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -63,7 +63,7 @@ export default function Sidebars() {
               href="https://medium.com/@sampathwgw"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 block"
+              className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-accent focus:ring-offset-2 block"
               aria-label="Visit Sampath's Medium profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -76,8 +76,8 @@ export default function Sidebars() {
 
       {/* Right Email Sidebar */}
       <div className="hidden lg:block fixed bottom-0 right-10 z-10 w-10">
-        <div className="flex flex-col items-center after:content-[''] after:block after:w-[1px] after:h-24 after:bg-[#8892b0] after:mt-4">
-          <a href="mailto:sampathwgw@gmail.com" className="p-1 text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 [writing-mode:vertical-rl] tracking-widest font-mono text-sm block">
+        <div className="flex flex-col items-center after:content-[''] after:block after:w-[1px] after:h-24 after:bg-slate-gray after:mt-4">
+          <a href="mailto:sampathwgw@gmail.com" className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 [writing-mode:vertical-rl] tracking-widest font-mono text-sm block">
             sampathwgw@gmail.com
           </a>
         </div>
