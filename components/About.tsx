@@ -37,7 +37,7 @@ const infoItems = [
 export default function About() {
   return (
     <section id="about-me" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
-      <h2 className="text-2xl font-bold text-green-accent mb-8 flex items-center whitespace-normal md:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:w-[300px] md:after:w-full md:after:max-w-[15rem] after:bg-[#374151] after:ml-6" data-aos="fade-up">
+      <h2 className="text-2xl font-bold text-green-accent mb-8 flex items-center whitespace-normal md:whitespace-nowrap after:content-[''] after:block after:h-px after:w-75 md:after:w-full md:after:max-w-60 after:bg-[#374151] after:ml-6" data-aos="fade-up">
         About Me
       </h2>
       <div className="flex flex-col lg:flex-row gap-12 items-start lg:justify-between" data-aos="fade-up" data-aos-delay="100">
@@ -70,7 +70,7 @@ export default function About() {
 
         {/* Right Column - Profile Image (centered & stacked at the bottom on mobile/tablet) */}
         <div className="shrink-0 w-full lg:w-75 flex justify-center order-2 mt-8 lg:mt-0">
-          <div className="relative group rounded-2xl p-2 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] w-[300px] max-w-full">
+          <div className="relative group rounded-2xl p-2 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] w-75 max-w-full">
             
             {/* Glow Behind Photo */}
             <div className="absolute inset-0 bg-green-accent/5 rounded-2xl blur-xl -z-10 group-hover:bg-green-accent/10 transition-all duration-700"></div>
