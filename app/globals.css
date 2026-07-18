@@ -56,3 +56,31 @@ body {
     background-color: rgba(100, 255, 218, 0.2);
     color: var(--green-400);
 }
+
+/* Float & Blink Keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+
