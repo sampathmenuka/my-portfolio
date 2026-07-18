@@ -116,7 +116,7 @@ export default function Contact() {
       console.error('EmailJS Error:', error);
       setFeedback({
         message: '❌ Could not send message. Please email sampathwgw@gmail.com directly.',
-        type: 'error-msg',
+        type: 'error',
       });
     } finally {
       setLoading(false);
@@ -128,27 +128,27 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-container contact-section">
-      <h2 className="section-title section-title-center" data-aos="fade-up">
+    <section id="contact" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12 text-center">
+      <h2 className="text-2xl font-bold text-[#4ade80] mb-8 flex items-center justify-center" data-aos="fade-up">
         What&apos;s Next?
       </h2>
-      <h3 className="contact-heading" data-aos="fade-up" data-aos-delay="50">
+      <h3 className="text-4xl font-bold text-[#ccd6f6] mb-4" data-aos="fade-up" data-aos-delay="50">
         Get In Touch
       </h3>
-      <p className="contact-description" data-aos="fade-up" data-aos-delay="200">
+      <p className="text-[#8892b0] max-w-lg mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
         Let&apos;s Chat! Whether you have a question, a project idea, or just want to connect, I&apos;m always happy to hear from you.
         Drop me a message, and I&apos;ll be in touch soon!
       </p>
       <form
         id="contactForm"
-        className="contact-form"
+        className="max-w-lg mx-auto flex flex-col gap-6"
         data-aos="fade-up"
         data-aos-delay="150"
         role="form"
         aria-label="Contact form"
         onSubmit={handleSubmit}
       >
-        <div className={`form-group ${touched.name && errors.name ? 'error' : ''}`}>
+        <div className="relative">
           <label htmlFor="name" className="sr-only">
             Your Name
           </label>
@@ -163,16 +163,16 @@ export default function Contact() {
             autoComplete="name"
             required
             aria-required="true"
-            className="form-input"
+            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 ${touched.name && errors.name ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
           />
           {touched.name && errors.name && (
-            <div className="error-message" id="name-error">
+            <div className="text-red-500 text-sm mt-1 text-left block" id="name-error">
               {errors.name}
             </div>
           )}
         </div>
 
-        <div className={`form-group ${touched.email && errors.email ? 'error' : ''}`}>
+        <div className="relative">
           <label htmlFor="email" className="sr-only">
             Your Email
           </label>
@@ -187,16 +187,16 @@ export default function Contact() {
             autoComplete="email"
             required
             aria-required="true"
-            className="form-input"
+            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 ${touched.email && errors.email ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
           />
           {touched.email && errors.email && (
-            <div className="error-message" id="email-error">
+            <div className="text-red-500 text-sm mt-1 text-left block" id="email-error">
               {errors.email}
             </div>
           )}
         </div>
 
-        <div className={`form-group ${touched.message && errors.message ? 'error' : ''}`}>
+        <div className="relative">
           <label htmlFor="message" className="sr-only">
             Your Message
           </label>
@@ -210,18 +210,18 @@ export default function Contact() {
             onBlur={handleBlur}
             required
             aria-required="true"
-            className="form-input form-textarea"
+            className={`w-full px-4 py-3 border rounded bg-transparent text-[#ccd6f6] placeholder-[#8892b0] text-base outline-none transition-colors duration-300 resize-y min-h-[120px] ${touched.message && errors.message ? 'border-red-500 focus:border-red-500' : 'border-[#a8b2d1] focus:border-[#4ade80]'}`}
           ></textarea>
           {touched.message && errors.message && (
-            <div className="error-message" id="message-error">
+            <div className="text-red-500 text-sm mt-1 text-left block" id="message-error">
               {errors.message}
             </div>
           )}
         </div>
 
-        <button type="submit" className="submit-btn" id="submitBtn" disabled={loading}>
+        <button type="submit" className="px-8 py-4 border border-[#4ade80] text-[#4ade80] bg-transparent rounded cursor-pointer text-base transition-colors duration-300 flex items-center justify-center gap-3 mx-auto hover:bg-[#4ade80]/10 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 focus:ring-offset-[#1a1a2e] disabled:opacity-50 disabled:cursor-not-allowed" id="submitBtn" disabled={loading}>
           {loading && (
-            <svg className="spinner" id="spinner" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-4 h-4 animate-spin" id="spinner" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
                 fill="#4ade80"
@@ -235,7 +235,7 @@ export default function Contact() {
           Send Mail
         </button>
         {feedback.message && (
-          <p className={`form-message ${feedback.type}`}>{feedback.message}</p>
+          <p className={`text-center font-medium mt-4 ${feedback.type === 'success' ? 'text-green-500' : 'text-red-500'}`}>{feedback.message}</p>
         )}
       </form>
     </section>

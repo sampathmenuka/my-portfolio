@@ -28,7 +28,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Sidebars />
-      <main id="content" className="main-content" role="main">
+      <main id="content" className="bg-[#1a1a2e] pt-20 px-2 lg:px-[9.375rem]" role="main">
         <Hero />
         <About />
         <Skills />

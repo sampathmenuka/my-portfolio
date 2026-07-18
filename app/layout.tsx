@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Sampath Menuka | Software Engineering Undergraduate',
@@ -42,6 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth">
+      <Head>
+        <link rel="icon" href="/assets/favicon.ico" />
+        <script src="/script.js" defer />
+      </Head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

@@ -63,17 +63,17 @@ export default function Skills() {
   const [activeTab, setActiveTab] = useState('frontend');
 
   return (
-    <section id="skills" className="section-container">
-      <div className="skills-wrapper" data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="section-title">Skills & Expertise</h2>
-        <p className="skills-subtitle">Technologies and tools I work with</p>
+    <section id="skills" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
+      <div className="mt-12" data-aos="fade-up" data-aos-duration="1000">
+        <h2 className="text-2xl font-bold text-[#4ade80] mb-8 flex items-center justify-center">Skills & Expertise</h2>
+        <p className="text-center text-[#8892b0] text-lg mb-10 -mt-4">Technologies and tools I work with</p>
 
         {/* Skills Tab Navigation */}
-        <div className="skills-tabs">
+        <div className="flex justify-center gap-2 flex-wrap mb-10 border-b-2 border-white/10 pb-2">
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`skill-tab ${activeTab === category.id ? 'active' : ''}`}
+              className={`relative px-6 py-3 text-base font-semibold text-[#8892b0] bg-transparent border-none cursor-pointer rounded-md transition-colors duration-300 hover:text-[#4ade80] hover:bg-[#4ade80]/5 focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:ring-offset-2 ${activeTab === category.id ? 'text-[#4ade80] after:w-full' : 'after:w-0'} after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:-translate-x-1/2 after:h-[3px] after:bg-[#4ade80] after:transition-all after:duration-300`}
               onClick={() => setActiveTab(category.id)}
             >
               {category.label}
@@ -82,22 +82,22 @@ export default function Skills() {
         </div>
 
         {/* Skills Content */}
-        <div className="skills-content">
+        <div className="min-h-[300px]">
           {categories.map((category) => (
             <div
               key={category.id}
-              className={`skills-panel ${activeTab === category.id ? 'active' : ''}`}
+              className={`animate-[fadeIn_0.5s_ease] ${activeTab === category.id ? 'block' : 'hidden'}`}
               style={{ display: activeTab === category.id ? 'block' : 'none' }}
             >
-              <div className="skills-grid">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {skillsData[category.id].map((skill, index) => (
-                  <div className="skill-card" key={index}>
+                  <div className="group relative p-6 sm:p-4 rounded-xl text-center flex flex-col items-center justify-center bg-gradient-to-br from-[#1a1a2e]/80 to-[#1e1e32]/60 border border-[#4ade80]/10 hover:border-[#4ade80] hover:shadow-[0_10px_30px_rgba(74,222,128,0.2)] hover:-translate-y-1 transition-all duration-300 overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-[#4ade80]/5 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300" key={index}>
                     <img
                       src={skill.logo}
                       alt={skill.name}
-                      className={`skill-logo ${skill.isInvertLogo ? 'invert' : ''}`}
+                      className={`h-12 w-12 mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:[transform:rotateY(360deg)] filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] ${skill.isInvertLogo ? 'invert' : ''}`}
                     />
-                    <span className="skill-name">{skill.name}</span>
+                    <span className="font-semibold text-[#ccd6f6] text-sm group-hover:text-[#4ade80] transition-colors duration-300">{skill.name}</span>
                   </div>
                 ))}
               </div>
