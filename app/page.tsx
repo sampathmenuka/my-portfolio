@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import Background from '@/components/Background';
 import Navbar from '@/components/Navbar';
 import Sidebars from '@/components/Sidebars';
 import Hero from '@/components/Hero';
@@ -17,18 +18,20 @@ import Footer from '@/components/Footer';
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
+      duration: 700,
+      easing: 'ease-out-cubic',
       once: true,
-      offset: 100,
+      offset: 80,
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen isolate">
+      <Background />
       <Navbar />
       <Sidebars />
-      <main id="content" className="bg-dark-navy pt-20 px-2 lg:px-[9.375rem]" role="main">
+      <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-16 sm:space-y-24" role="main">
         <Hero />
         <About />
         <Skills />
