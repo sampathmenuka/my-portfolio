@@ -1,37 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-slate-gray: #8892b0;
-  --color-light-slate: #a8b2d1;
-  --color-lightest-slate: #ccd6f6;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --color-slate-gray: #94a3b8;
+  --color-light-slate: #cbd5e1;
+  --color-lightest-slate: #e2e8f0;
   --color-green-accent: #4ade80;
-  --color-green-teal: #64ffda;
-  --color-dark-navy: #1a1a2e;
-  --color-dark-accent: #16162a;
+  --color-green-teal: #2dd4bf;
+  --color-cyan-accent: #22d3ee;
+  --color-dark-navy: #07070d;
+  --color-dark-accent: #0e0f19;
 }
 
 /* ===== CSS Variables ===== */
 :root {
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
+    --slate: #94a3b8;
+    --lightest-slate: #e2e8f0;
     --green-400: #4ade80;
-    --black: #1a1a2e;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+    --black: #07070d;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
 }
 
-/* ===== Custom Base Styles ===== */
+/* ===== Base ===== */
 html {
     scrollbar-width: thin;
-    scrollbar-color: #374151 var(--black);
+    scrollbar-color: #1f2937 var(--black);
     scroll-behavior: smooth;
     background-color: var(--black);
     color: var(--slate);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 section {
@@ -41,53 +40,111 @@ section {
 body {
     background-color: var(--black);
     color: var(--slate);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Custom Keyframes & Utility Animations ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Custom Micro-animations */
-.logo-link img {
-    transition: transform 0.3s ease;
-}
-.logo-link:hover img {
-    transform: rotate(360deg);
-}
-
-/* custom selection color */
 ::selection {
-    background-color: rgba(100, 255, 218, 0.2);
-    color: var(--green-400);
+    background-color: rgba(74, 222, 128, 0.25);
+    color: #f0fdf4;
 }
 
-/* Float & Blink Keyframes */
+/* ===== Background layers ===== */
+.bg-grid {
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(100px);
+    opacity: 0.35;
+    animation: drift 22s ease-in-out infinite alternate;
+}
+
+/* Soft glow that follows the cursor */
+.cursor-glow {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(74, 222, 128, 0.06), transparent 40%);
+}
+
+/* ===== Reusable surfaces & text ===== */
+.glass {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-hover {
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-hover:hover {
+    border-color: rgba(74, 222, 128, 0.35);
+    box-shadow: 0 20px 50px -20px rgba(74, 222, 128, 0.25);
+    transform: translateY(-4px);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #4ade80 0%, #2dd4bf 50%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4ade80, #2dd4bf);
+    color: #04140a;
+    box-shadow: 0 10px 30px -10px rgba(74, 222, 128, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 16px 40px -12px rgba(74, 222, 128, 0.75);
+}
+
+/* Gradient border used on featured elements */
+.gradient-border {
+    position: relative;
+}
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.6), rgba(34, 211, 238, 0.15) 40%, transparent 60%, rgba(45, 212, 191, 0.4));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 @keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, -40px) scale(1.1); }
+    100% { transform: translate(-40px, 30px) scale(0.95); }
 }
 
 .animate-float {
@@ -98,3 +155,14 @@ body {
     animation: blink 1s step-end infinite;
 }
 
+.logo-link img {
+    transition: transform 0.4s ease;
+}
+.logo-link:hover img {
+    transform: rotate(360deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .blob, .animate-float, .cursor-blink { animation: none; }
+}
