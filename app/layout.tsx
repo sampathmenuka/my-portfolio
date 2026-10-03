@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Head from 'next/head';
+
+const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' });
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 
 export const metadata: Metadata = {
   title: 'Sampath Menuka | Software Engineering Undergraduate',
@@ -10,6 +13,7 @@ export const metadata: Metadata = {
     'full stack developer, software engineer, java developer, spring boot, react developer, nodejs, web development, RESTful API, MongoDB, MySQL',
   authors: [{ name: 'Sampath Menuka Chandimal' }],
   robots: 'index, follow',
+  icons: { icon: '/assets/favicon.ico' },
   openGraph: {
     title: 'Sampath Menuka | Software Engineering Undergraduate',
     description:
@@ -42,11 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
-      <Head>
-        <link rel="icon" href="/assets/favicon.ico" />
-        <script src="/script.js" defer />
-      </Head>
+    <html lang="en" className={`h-full scroll-smooth ${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
