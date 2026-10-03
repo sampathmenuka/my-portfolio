@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionHeading from './SectionHeading';
 
 interface Project {
   title: string;
@@ -39,130 +40,111 @@ const projects: Project[] = [
   }
 ];
 
+const highlights = [
+  {
+    title: 'REST APIs',
+    description: 'Designed and built production-grade RESTful APIs handling 10,000+ requests/day using Spring Boot and Node.js with full CRUD, pagination, and error handling.',
+    icon: <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
+  },
+  {
+    title: 'JWT Authentication',
+    description: 'Implemented secure JWT-based authentication and role-based access control (RBAC) across multiple full-stack projects including ParkSwift and PerfectCV.',
+    icon: <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z" />
+  },
+  {
+    title: 'Databases',
+    description: 'Experienced with SQL (MySQL + Hibernate/JPA) and NoSQL (MongoDB + Mongoose). Skilled in schema design, indexing, query optimization, and ORM mapping.',
+    icon: <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23V17zm0-4.55c-1.3.83-3.45 1.55-6 1.55s-4.7-.72-6-1.55v-2.27c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23v2.27zm-6-2.45C8.13 10 6 8.5 6 8s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2z" />
+  },
+  {
+    title: 'React Applications',
+    description: 'Built responsive, component-driven React.js frontends with hooks, state management, and third-party API integrations for real-world applications used by 200+ users.',
+    icon: <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+  }
+];
+
 export default function Projects() {
   return (
     <>
       {/* Projects Section */}
       <section id="projects" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
-        <h2 className="text-2xl font-bold text-green-accent mb-8 flex items-center whitespace-normal md:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:w-[300px] md:after:w-full md:after:max-w-[15rem] after:bg-[#374151] after:ml-6" data-aos="fade-up">
-          Things I&apos;ve worked on
-        </h2>
-        <div className="grid grid-cols-1 gap-8 mt-8">
+        <SectionHeading index="03" label="Projects" title={<>Things I&apos;ve <span className="text-gradient">worked on</span></>} />
+
+        <div className="grid grid-cols-1 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group flex flex-col md:flex-row md:items-stretch bg-gradient-to-br from-dark-accent/90 to-dark-navy/95 rounded-2xl overflow-hidden border border-green-teal/10 hover:border-green-teal/30 hover:shadow-2xl hover:shadow-dark-navy hover:-translate-y-2 transition-all duration-300"
+            <article
+              key={project.title}
+              className="group glass glass-hover flex flex-col md:flex-row md:items-stretch rounded-3xl overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={project.delay}
             >
               {project.image && (
-                <div className="relative w-full h-[250px] md:w-[40%] md:h-auto md:min-h-[300px] overflow-hidden flex-shrink-0 bg-dark-navy/50">
+                <div className="relative w-full h-62.5 md:w-[42%] md:h-auto md:min-h-75 overflow-hidden shrink-0 bg-linear-to-br from-green-accent/10 via-dark-accent to-cyan-accent/10">
                   <img
                     src={project.image}
                     alt={`${project.title} screenshot`}
-                    className="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                   {project.badge && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-navy/80 to-transparent flex items-end p-4">
-                      <span className="bg-green-accent text-dark-navy px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
-                    </div>
+                    <span className="absolute top-4 left-4 glass px-3 py-1 rounded-full text-xs font-semibold text-green-accent uppercase tracking-wider">
+                      {project.badge}
+                    </span>
                   )}
                 </div>
               )}
-              <div className="p-6 md:p-8 flex-1 flex flex-col md:w-[60%]">
-                <h3 className="text-xl md:text-2xl font-bold text-lightest-slate mb-3 leading-snug">{project.title}</h3>
-                <p className="text-slate-gray text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="bg-green-teal/10 text-green-accent px-2.5 py-1 rounded text-xs font-mono border border-green-teal/20 hover:bg-green-teal/20 hover:border-green-accent transition-all duration-200">
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                <span className="font-mono text-sm text-green-accent/80 mb-2">0{index + 1}</span>
+                <h3 className="text-xl md:text-2xl font-bold text-lightest-slate mb-3 leading-snug tracking-tight group-hover:text-white transition-colors">{project.title}</h3>
+                <p className="text-slate-gray text-sm leading-relaxed mb-6 flex-1">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-full text-xs font-mono text-light-slate bg-white/5 border border-white/10">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-green-teal/10">
+                <div className="mt-6 pt-5 border-t border-white/10">
                   <a
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-green-accent text-sm font-medium px-4 py-2 border border-green-teal/30 rounded-md bg-green-teal/5 hover:bg-green-teal/15 hover:border-green-accent hover:translate-x-1 transition-all duration-300 text-decoration-none"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-lightest-slate hover:text-green-accent transition-colors duration-300 group/link"
                     title="View on GitHub"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                     <span>View Repository</span>
+                    <span className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
       {/* Technical Highlights Section */}
       <section id="technical-highlights" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
-        <h2 className="text-2xl font-bold text-green-accent mb-8 flex items-center whitespace-normal md:whitespace-nowrap after:content-[''] after:block after:h-[1px] after:w-[300px] md:after:w-full md:after:max-w-[15rem] after:bg-[#374151] after:ml-6" data-aos="fade-up">
-          Technical Highlights
-        </h2>
-        <p className="text-center text-slate-gray text-lg mb-10 -mt-4" data-aos="fade-up" data-aos-delay="50">
-          Core competencies applied in real-world projects
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8" data-aos="fade-up" data-aos-delay="100">
-          <div className="bg-gradient-to-br from-green-accent/5 to-green-teal/3 border border-green-accent/10 rounded-lg p-8 text-center transition-all duration-300 hover:border-green-accent hover:bg-gradient-to-br hover:from-green-accent/10 hover:to-green-teal/8 hover:-translate-y-1">
-            <div className="w-12 h-12 mx-auto mb-4 text-green-accent flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
-              </svg>
+        <SectionHeading
+          index="04"
+          label="Highlights"
+          title={<>Technical <span className="text-gradient">Highlights</span></>}
+          subtitle="Core competencies applied in real-world projects"
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="100">
+          {highlights.map((item) => (
+            <div key={item.title} className="glass glass-hover rounded-2xl p-6">
+              <div className="w-11 h-11 mb-5 p-2.5 rounded-xl bg-linear-to-br from-green-accent/20 to-cyan-accent/10 text-green-accent ring-1 ring-green-accent/20">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  {item.icon}
+                </svg>
+              </div>
+              <h3 className="text-lg text-lightest-slate mb-2 font-semibold tracking-tight">{item.title}</h3>
+              <p className="text-slate-gray text-sm leading-relaxed">{item.description}</p>
             </div>
-            <h3 className="text-xl text-lightest-slate mb-3 font-semibold">REST APIs</h3>
-            <p className="text-slate-gray text-sm leading-relaxed">
-              Designed and built production-grade RESTful APIs handling 10,000+ requests/day using Spring Boot and
-              Node.js with full CRUD, pagination, and error handling.
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-green-accent/5 to-green-teal/3 border border-green-accent/10 rounded-lg p-8 text-center transition-all duration-300 hover:border-green-accent hover:bg-gradient-to-br hover:from-green-accent/10 hover:to-green-teal/8 hover:-translate-y-1">
-            <div className="w-12 h-12 mx-auto mb-4 text-green-accent flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z" />
-              </svg>
-            </div>
-            <h3 className="text-xl text-lightest-slate mb-3 font-semibold">JWT Authentication</h3>
-            <p className="text-slate-gray text-sm leading-relaxed">
-              Implemented secure JWT-based authentication and role-based access control (RBAC) across multiple
-              full-stack projects including ParkSwift and PerfectCV.
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-green-accent/5 to-green-teal/3 border border-green-accent/10 rounded-lg p-8 text-center transition-all duration-300 hover:border-green-accent hover:bg-gradient-to-br hover:from-green-accent/10 hover:to-green-teal/8 hover:-translate-y-1">
-            <div className="w-12 h-12 mx-auto mb-4 text-green-accent flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23V17zm0-4.55c-1.3.83-3.45 1.55-6 1.55s-4.7-.72-6-1.55v-2.27c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23v2.27zm-6-2.45C8.13 10 6 8.5 6 8s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2z" />
-              </svg>
-            </div>
-            <h3 className="text-xl text-lightest-slate mb-3 font-semibold">Databases</h3>
-            <p className="text-slate-gray text-sm leading-relaxed">
-              Experienced with SQL (MySQL + Hibernate/JPA) and NoSQL (MongoDB + Mongoose). Skilled in schema design,
-              indexing, query optimization, and ORM mapping.
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-green-accent/5 to-green-teal/3 border border-green-accent/10 rounded-lg p-8 text-center transition-all duration-300 hover:border-green-accent hover:bg-gradient-to-br hover:from-green-accent/10 hover:to-green-teal/8 hover:-translate-y-1">
-            <div className="w-12 h-12 mx-auto mb-4 text-green-accent flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-              </svg>
-            </div>
-            <h3 className="text-xl text-lightest-slate mb-3 font-semibold">React Applications</h3>
-            <p className="text-slate-gray text-sm leading-relaxed">
-              Built responsive, component-driven React.js frontends with hooks, state management, and third-party API
-              integrations for real-world applications used by 200+ users.
-            </p>
-          </div>
+          ))}
         </div>
       </section>
     </>
