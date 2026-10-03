@@ -11,7 +11,7 @@ interface BadgeProps {
 function FloatingBadge({ name, className, delay, duration, icon }: BadgeProps) {
   return (
     <div
-      className={`absolute flex items-center gap-2 px-3 py-1.5 rounded-full border bg-[#111827]/90 text-sm font-medium shadow-lg backdrop-blur-sm select-none transition-transform duration-300 hover:scale-110 z-20 ${className}`}
+      className={`absolute flex items-center gap-2 px-3 py-1.5 rounded-full border bg-dark-accent/80 text-sm font-medium shadow-lg backdrop-blur-sm select-none transition-transform duration-300 hover:scale-110 z-20 ${className}`}
       style={{
         animation: `float ${duration} ease-in-out infinite`,
         animationDelay: delay,
@@ -31,13 +31,13 @@ export default function DeveloperCodeCard() {
       <div className="absolute inset-0 bg-green-accent/5 rounded-2xl blur-3xl -z-10 group-hover:bg-green-accent/10 transition-all duration-700"></div>
       
       {/* Glow Ring border effect */}
-      <div className="absolute -inset-0.5 bg-linear-to-r from-green-accent/20 via-green-teal/10 to-green-accent/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+      <div className="absolute -inset-px bg-linear-to-br from-green-accent/50 via-transparent to-cyan-accent/40 rounded-2xl blur-sm opacity-60 group-hover:opacity-100 transition duration-500"></div>
 
       {/* Editor Main Window */}
-      <div className="relative bg-dark-accent border border-[#374151] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:rotate-1">
+      <div className="relative bg-dark-accent/90 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] transition-all duration-500 hover:-translate-y-2 hover:rotate-1">
         
         {/* Editor Top Bar / Title Bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-[#111827] border-b border-[#374151]">
+        <div className="flex items-center justify-between px-4 py-3 bg-white/3 border-b border-white/10">
           {/* Circular window control dots */}
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-full bg-[#ef4444] opacity-80 hover:opacity-100 transition-opacity"></span>
@@ -46,7 +46,7 @@ export default function DeveloperCodeCard() {
           </div>
 
           {/* Active file tab */}
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-dark-accent rounded-t-lg border-t border-x border-[#374151] text-xs text-lightest-slate font-mono select-none">
+          <div className="flex items-center gap-1.5 px-3 py-1 bg-white/5 rounded-md border border-white/10 text-xs text-lightest-slate font-mono select-none">
             <span className="text-green-teal">TypeScript</span>
             <span>developer.ts</span>
           </div>
