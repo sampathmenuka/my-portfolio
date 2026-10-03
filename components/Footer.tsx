@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e]">
+    <footer className="mt-24 border-t border-white/10 bg-dark-accent/40 backdrop-blur-sm pt-8">
       <div className="block lg:hidden w-full max-w-[270px] mx-auto mb-3">
         <ul className="flex justify-between items-center">
           <li>
@@ -10,7 +10,7 @@ export default function Footer() {
               href="https://github.com/pasindusmc909"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 block"
+              className="text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 block"
               aria-label="Visit Sampath's GitHub profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -23,7 +23,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/sampathmenuka/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 block"
+              className="text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 block"
               aria-label="Visit Sampath's LinkedIn profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://x.com/pasindusmc909"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 block"
+              className="text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 block"
               aria-label="Visit Sampath's X profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -49,7 +49,7 @@ export default function Footer() {
               href="https://www.facebook.com/sampath.menuk9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 block"
+              className="text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 block"
               aria-label="Visit Sampath's Facebook profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -62,7 +62,7 @@ export default function Footer() {
               href="https://medium.com/@sampathwgw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#4ade80] hover:-translate-y-1 transition-all duration-200 block"
+              className="text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 block"
               aria-label="Visit Sampath's Medium profile"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -72,23 +72,23 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="bg-[#1a1a2e] py-8 px-4 text-center">
+      <div className="py-8 px-4 text-center">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-6">
-            <a href="tel:+94778015196" className="flex items-center gap-2 text-[#8892b0] hover:text-[#4ade80] transition-colors duration-200 text-decoration-none">
+            <a href="tel:+94778015196" className="flex items-center gap-2 text-slate-gray hover:text-green-accent transition-colors duration-200 ">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
               </svg>
               +94 77 801 5196
             </a>
-            <a href="mailto:sampathwgw@gmail.com" className="flex items-center gap-2 text-[#8892b0] hover:text-[#4ade80] transition-colors duration-200 text-decoration-none">
+            <a href="mailto:sampathwgw@gmail.com" className="flex items-center gap-2 text-slate-gray hover:text-green-accent transition-colors duration-200 ">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
               sampathwgw@gmail.com
             </a>
           </div>
-          <div className="flex items-center justify-center gap-2 text-[#ccd6f6] text-sm">
+          <div className="flex items-center justify-center gap-2 text-slate-gray text-sm">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" />
             </svg>
