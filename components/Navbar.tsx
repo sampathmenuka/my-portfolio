@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { RESUME_URL } from '@/lib/portfolio';
 
 const navLinks = [
   { href: '#hero', label: 'Home' },
@@ -11,21 +12,9 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
-const RESUME_URL = 'https://pasindusmc909.github.io/resume.pdf';
-
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('#hero');
-
-  const closeMenu = () => setIsOpen(false);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -71,7 +60,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-1 p-1 rounded-full bg-white/3 border border-white/5">
+            <div className="flex items-center gap-1 p-1 rounded-full bg-white/3 border border-white/5">
               {navLinks.map(({ href, label }) => (
                 <a
                   key={href}
@@ -88,75 +77,13 @@ export default function Navbar() {
               href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex btn-primary px-4 py-2 rounded-xl text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-lightest-slate"
+              className="inline-flex btn-primary px-4 py-2 rounded-xl text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-lightest-slate"
             >
               Resume
             </a>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="flex md:hidden items-center p-2 rounded-lg glass cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
-              aria-label={isOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <svg className="w-5 h-5 text-green-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7h16M4 12h16M4 17h10" />
-                )}
-              </svg>
-            </button>
           </div>
         </div>
       </nav>
-
-      {/* Mobile Sidebar */}
-      <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        onClick={closeMenu}
-      ></div>
-      <div
-        className={`fixed top-0 h-full w-[min(80vw,320px)] bg-dark-accent/95 backdrop-blur-xl border-l border-white/10 z-50 transition-all duration-300 ease-in-out md:hidden ${isOpen ? 'right-0' : '-right-full'}`}
-      >
-        <div className="flex justify-between items-center px-6 py-5 border-b border-white/10">
-          <span className="text-sm font-mono uppercase tracking-widest text-slate-gray">Menu</span>
-          <button
-            className="p-2 text-green-accent rounded-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
-            aria-label="Close menu"
-            onClick={closeMenu}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <nav className="flex flex-col px-4 py-6 gap-1" aria-label="Mobile navigation menu">
-          {navLinks.map(({ href, label }, i) => (
-            <a
-              key={href}
-              href={href}
-              onClick={closeMenu}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${active === href ? 'bg-green-accent/10 text-green-accent' : 'text-lightest-slate hover:bg-white/5'}`}
-            >
-              <span className="font-mono text-xs text-slate-gray">0{i + 1}</span>
-              {label}
-            </a>
-          ))}
-          <div className="pt-6">
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="block w-full py-3 btn-primary font-semibold rounded-xl text-center"
-            >
-              Resume
-            </a>
-          </div>
-        </nav>
-      </div>
     </header>
   );
 }

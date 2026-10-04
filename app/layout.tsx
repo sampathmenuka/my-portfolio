@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -38,6 +38,13 @@ export const metadata: Metadata = {
       'Software Engineering Undergraduate from Sri Lanka building frontend, backend, and full-stack web applications. Open to internship opportunities.',
     images: ['https://sampathmenuka.github.io/assets/myphoto.png'],
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#07070d',
 };
 
 export default function RootLayout({
