@@ -35,7 +35,7 @@ export default function Home() {
       <div className="hidden md:block">
         <Navbar />
         <Sidebars />
-        <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-16 sm:space-y-24" role="main">
+        <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-6 sm:space-y-8" role="main">
           <Hero />
           <About />
           <Skills />

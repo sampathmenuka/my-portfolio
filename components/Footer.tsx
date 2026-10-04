@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-white/10 bg-dark-accent/40 backdrop-blur-sm pt-8">
+    <footer className="mt-16 border-t border-white/10 bg-dark-accent/40 backdrop-blur-sm pt-8">
       <div className="block lg:hidden w-full max-w-[270px] mx-auto mb-3">
         <ul className="flex justify-between items-center">
           <li>
