@@ -1,11 +1,6 @@
 import React from 'react';
 import DeveloperCodeCard from './DeveloperCodeCard';
-
-const stats = [
-  { value: '3+', label: 'Full-stack projects' },
-  { value: '25+', label: 'Technologies' },
-  { value: '4', label: 'IEEE roles' },
-];
+import { stats } from '@/lib/portfolio';
 
 export default function Hero() {
   return (

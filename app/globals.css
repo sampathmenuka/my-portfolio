@@ -26,6 +26,7 @@
 
 /* ===== Base ===== */
 html {
+    -webkit-tap-highlight-color: transparent;
     scrollbar-width: thin;
     scrollbar-color: #1f2937 var(--black);
     scroll-behavior: smooth;
@@ -141,6 +142,11 @@ body {
     50% { opacity: 0; }
 }
 
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 @keyframes drift {
     0% { transform: translate(0, 0) scale(1); }
     50% { transform: translate(60px, -40px) scale(1.1); }
@@ -155,6 +161,23 @@ body {
     animation: blink 1s step-end infinite;
 }
 
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+/* Horizontal scrollers (mobile carousels, chip rows) */
+.no-scrollbar {
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Edge fade for horizontally scrolling rows */
+.fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
 .logo-link img {
     transition: transform 0.4s ease;
 }
@@ -164,5 +187,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .blob, .animate-float, .cursor-blink { animation: none; }
+    .blob, .animate-float, .cursor-blink, .animate-marquee { animation: none; }
 }

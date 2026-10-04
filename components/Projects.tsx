@@ -1,67 +1,6 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
-
-interface Project {
-  title: string;
-  badge?: string;
-  description: string;
-  tags: string[];
-  image?: string;
-  repoUrl: string;
-  delay: number;
-}
-
-const projects: Project[] = [
-  {
-    title: 'ParkSwift – Online Parking Reservation System',
-    badge: 'Group Leader',
-    description: 'Led development of a full-stack parking system managing 100+ slots with real-time availability. Implemented JWT authentication, Stripe payment integration, and achieved 97% test coverage with role-based access control.',
-    tags: ['Node.js', 'React', 'MongoDB', 'Stripe API', 'JWT', 'Tailwind CSS'],
-    image: '/assets/project_1.png',
-    repoUrl: 'https://github.com/pasindusmc909/ParkSwift',
-    delay: 100
-  },
-  {
-    title: 'PerfectCV - AI-Powered CV Optimization System',
-    badge: 'Group Project',
-    description: 'AI-powered CV optimization platform used by 200+ users. Integrated Google Gemini AI for intelligent resume analysis, achieving 85% ATS score improvement for users. Reduced PDF generation time by 60% using async processing.',
-    tags: ['Python', 'Flask', 'React', 'Google Gemini AI', 'MongoDB'],
-    image: '/assets/project_2.png',
-    repoUrl: 'https://github.com/Dhivanujan/MiniProject-PerfectCV',
-    delay: 200
-  },
-  {
-    title: 'Hotel Management System',
-    description: 'Designed and built REST API handling 10,000+ requests/day with 99.2% uptime. Implemented comprehensive business logic, database optimization, and documented API endpoints for seamless team integration.',
-    tags: ['Java 17', 'Spring Boot', 'Hibernate', 'MySQL', 'Maven'],
-    image: '/assets/project_1.png',
-    repoUrl: 'https://github.com/app1-fullStack',
-    delay: 300
-  }
-];
-
-const highlights = [
-  {
-    title: 'REST APIs',
-    description: 'Designed and built production-grade RESTful APIs handling 10,000+ requests/day using Spring Boot and Node.js with full CRUD, pagination, and error handling.',
-    icon: <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
-  },
-  {
-    title: 'JWT Authentication',
-    description: 'Implemented secure JWT-based authentication and role-based access control (RBAC) across multiple full-stack projects including ParkSwift and PerfectCV.',
-    icon: <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z" />
-  },
-  {
-    title: 'Databases',
-    description: 'Experienced with SQL (MySQL + Hibernate/JPA) and NoSQL (MongoDB + Mongoose). Skilled in schema design, indexing, query optimization, and ORM mapping.',
-    icon: <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23V17zm0-4.55c-1.3.83-3.45 1.55-6 1.55s-4.7-.72-6-1.55v-2.27c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23v2.27zm-6-2.45C8.13 10 6 8.5 6 8s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2z" />
-  },
-  {
-    title: 'React Applications',
-    description: 'Built responsive, component-driven React.js frontends with hooks, state management, and third-party API integrations for real-world applications used by 200+ users.',
-    icon: <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
-  }
-];
+import { projects, highlights } from '@/lib/portfolio';
 
 export default function Projects() {
   return (
@@ -76,7 +15,7 @@ export default function Projects() {
               key={project.title}
               className="group glass glass-hover flex flex-col md:flex-row md:items-stretch rounded-3xl overflow-hidden"
               data-aos="fade-up"
-              data-aos-delay={project.delay}
+              data-aos-delay={(index + 1) * 100}
             >
               {project.image && (
                 <div className="relative w-full h-62.5 md:w-[42%] md:h-auto md:min-h-75 overflow-hidden shrink-0 bg-linear-to-br from-green-accent/10 via-dark-accent to-cyan-accent/10">

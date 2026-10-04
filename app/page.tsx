@@ -14,6 +14,7 @@ import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import MobileApp from '@/components/mobile/MobileApp';
 
 export default function Home() {
   useEffect(() => {
@@ -29,17 +30,26 @@ export default function Home() {
   return (
     <div className="relative min-h-screen isolate">
       <Background />
-      <Navbar />
-      <Sidebars />
-      <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-16 sm:space-y-24" role="main">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
+
+      {/* Desktop & tablet */}
+      <div className="hidden md:block">
+        <Navbar />
+        <Sidebars />
+        <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-16 sm:space-y-24" role="main">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+
+      {/* Phones */}
+      <div className="md:hidden">
+        <MobileApp />
+      </div>
     </div>
   );
 }

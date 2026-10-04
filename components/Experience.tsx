@@ -1,51 +1,6 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
-
-interface ExperienceItem {
-  title: string;
-  organization: string;
-  description: string[];
-  image: string;
-}
-
-const experiences: ExperienceItem[] = [
-  {
-    title: 'Project Chair',
-    organization: 'NEXORA 1.0 – IEEE WIE Student Branch, Sabaragamuwa University of Sri Lanka',
-    description: [
-      'Led and coordinated the NEXORA 1.0 project as Project Chair.',
-      'Managed project planning, execution, and team coordination for successful event delivery.'
-    ],
-    image: '/assets/NEXORA.png'
-  },
-  {
-    title: 'Public Speaker',
-    organization: 'Career Compass – IEEE Student Branch, Sabaragamuwa University of Sri Lanka',
-    description: [
-      'Delivered presentations and shared insights on career development and professional growth.',
-      'Engaged with students to provide guidance and mentorship on career pathways.'
-    ],
-    image: '/assets/public_speaker.png'
-  },
-  {
-    title: 'Instructor',
-    organization: 'HOPE – IEEE WIE Student Branch, Sabaragamuwa University of Sri Lanka',
-    description: [
-      'Conducted instructional sessions and workshops for students in the HOPE program.',
-      'Provided technical guidance and support to help participants develop their skills.'
-    ],
-    image: '/assets/hope.jpg'
-  },
-  {
-    title: 'Logistics Team Member',
-    organization: 'IEEE Day – IEEE Student Branch, Sabaragamuwa University of Sri Lanka',
-    description: [
-      'Coordinated logistics and operational aspects for IEEE Day celebrations.',
-      'Ensured smooth execution of event activities and supported team operations.'
-    ],
-    image: '/assets/logistic.jpg'
-  }
-];
+import { experiences } from '@/lib/portfolio';
 
 export default function Experience() {
   return (
