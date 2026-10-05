@@ -43,9 +43,9 @@ export const socials: Social[] = [
 ];
 
 export const stats = [
-  { value: '3+', label: 'Full-stack projects' },
+  { value: '8+', label: 'Projects' },
   { value: '25+', label: 'Technologies' },
-  { value: '4', label: 'IEEE roles' },
+  { value: '4+', label: 'IEEE volunteer roles' },
 ];
 
 export const infoItems = [
@@ -90,7 +90,9 @@ export interface Skill {
 
 export const skillsData: Record<string, Skill[]> = {
   frontend: [
+    { name: 'Next.js', logo: `${DEVICON}/nextjs/nextjs-original.svg`, isInvertLogo: true },
     { name: 'React.js', logo: `${DEVICON}/react/react-original.svg` },
+    { name: 'Angular', logo: `${DEVICON}/angular/angular-original.svg` },
     { name: 'JavaScript', logo: `${DEVICON}/javascript/javascript-original.svg` },
     { name: 'TypeScript', logo: `${DEVICON}/typescript/typescript-original.svg` },
     { name: 'HTML', logo: `${DEVICON}/html5/html5-original.svg` },
@@ -103,11 +105,15 @@ export const skillsData: Record<string, Skill[]> = {
     { name: 'Express.js', logo: `${DEVICON}/express/express-original.svg`, isInvertLogo: true },
     { name: 'Python', logo: `${DEVICON}/python/python-original.svg` },
     { name: 'C', logo: `${DEVICON}/c/c-original.svg` },
+    { name: 'C#', logo: `${DEVICON}/csharp/csharp-original.svg` },
+    { name: '.NET', logo: `${DEVICON}/dotnetcore/dotnetcore-original.svg` },
     { name: 'Hibernate', logo: `${DEVICON}/hibernate/hibernate-original.svg` },
     { name: 'Sequelize', logo: `${DEVICON}/sequelize/sequelize-original.svg` }
   ],
   database: [
     { name: 'MySQL', logo: `${DEVICON}/mysql/mysql-original.svg` },
+    { name: 'PostgreSQL', logo: `${DEVICON}/postgresql/postgresql-original.svg` },
+    { name: 'SQLite', logo: `${DEVICON}/sqlite/sqlite-original.svg` },
     { name: 'MongoDB', logo: `${DEVICON}/mongodb/mongodb-original.svg` },
     { name: 'SQL', logo: `${DEVICON}/azuresqldatabase/azuresqldatabase-original.svg` }
   ],
@@ -119,7 +125,10 @@ export const skillsData: Record<string, Skill[]> = {
   tools: [
     { name: 'VS Code', logo: `${DEVICON}/vscode/vscode-original.svg` },
     { name: 'IntelliJ IDEA', logo: `${DEVICON}/intellij/intellij-original.svg` },
-    { name: 'Postman', logo: `${DEVICON}/postman/postman-original.svg` }
+    { name: 'WebStorm', logo: `${DEVICON}/webstorm/webstorm-original.svg` },
+    { name: 'Visual Studio', logo: `${DEVICON}/visualstudio/visualstudio-original.svg` },
+    { name: 'Postman', logo: `${DEVICON}/postman/postman-original.svg` },
+    { name: 'AutoCAD', logo: '/assets/autocad.svg' }
   ],
   concepts: [
     { name: 'REST API', logo: `${DEVICON}/openapi/openapi-original.svg` },
@@ -154,7 +163,7 @@ export const projects: Project[] = [
     badge: 'Group Leader',
     description: 'Led development of a full-stack parking system managing 100+ slots with real-time availability. Implemented JWT authentication, Stripe payment integration, and achieved 97% test coverage with role-based access control.',
     tags: ['Node.js', 'React', 'MongoDB', 'Stripe API', 'JWT', 'Tailwind CSS'],
-    image: '/assets/project_1.png',
+    image: '/assets/project_1.webp',
     repoUrl: 'https://github.com/pasindusmc909/ParkSwift'
   },
   {
@@ -162,38 +171,75 @@ export const projects: Project[] = [
     badge: 'Group Project',
     description: 'AI-powered CV optimization platform used by 200+ users. Integrated Google Gemini AI for intelligent resume analysis, achieving 85% ATS score improvement for users. Reduced PDF generation time by 60% using async processing.',
     tags: ['Python', 'Flask', 'React', 'Google Gemini AI', 'MongoDB'],
-    image: '/assets/project_2.png',
+    image: '/assets/project_2.webp',
     repoUrl: 'https://github.com/Dhivanujan/MiniProject-PerfectCV'
   },
   {
-    title: 'Hotel Management System',
-    description: 'Designed and built REST API handling 10,000+ requests/day with 99.2% uptime. Implemented comprehensive business logic, database optimization, and documented API endpoints for seamless team integration.',
-    tags: ['Java 17', 'Spring Boot', 'Hibernate', 'MySQL', 'Maven'],
-    image: '/assets/project_1.png',
-    repoUrl: 'https://github.com/app1-fullStack'
+    title: 'Digital Store – Marketplace for Digital Products',
+    description: 'A marketplace where creators sell ebooks, courses and downloadable files. Features Stripe checkout, a personal download library, verified-buyer reviews, a creator studio where sellers keep 90% of each sale, and admin moderation.',
+    tags: ['Java 21', 'Spring Boot', 'PostgreSQL', 'JWT', 'Stripe API', 'Next.js', 'Tailwind CSS'],
+    image: '/assets/project_digital_store.webp',
+    repoUrl: 'https://github.com/sampathmenuka/Aivora'
+  },
+  {
+    title: 'WILS – Crypto News & Market Tracker',
+    description: 'A crypto dashboard with live prices for the top 100 coins via the CoinGecko API, sparklines, search, interactive price charts and a saved watchlist. Shared API caching and lazy-loaded pages halved the initial JavaScript download.',
+    tags: ['React 18', 'React Router', 'Vite', 'Chart.js', 'CoinGecko API'],
+    image: '/assets/project_wils.webp',
+    repoUrl: 'https://github.com/sampathmenuka/WILS-Crypto-News'
+  },
+  {
+    title: 'SimplePOS – Point of Sale System',
+    description: 'A full-stack point of sale system for small shops: a fast register with scanner-style search and discounts, server-verified stock and pricing on every sale, and a back office for inventory, customers, sales history and reports.',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'TanStack Query', 'shadcn/ui', 'Tailwind CSS', 'Recharts'],
+    image: '/assets/project_simplepos.webp',
+    repoUrl: 'https://github.com/sampathmenuka/simple-pos'
+  },
+  {
+    title: 'Art Factory – Creative Studio Website',
+    description: 'A responsive single-page site for an art studio, with an animated split-layout hero, scroll-reveal effects, an app-style mobile tab bar, an FAQ accordion and a validated contact form. Keyboard-accessible with reduced-motion support.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Lucide Icons'],
+    image: '/assets/project_art_factory.webp',
+    repoUrl: 'https://github.com/sampathmenuka/Art_Factory'
+  },
+  {
+    title: 'X-NFT – Curated NFT Marketplace',
+    description: 'A responsive, multi-page NFT marketplace with a dark neon design, a live auction countdown, a searchable and filterable gallery, and form validation with a password strength meter. Built mobile-first with swipeable card rows.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5'],
+    image: '/assets/project_xnft.webp',
+    repoUrl: 'https://github.com/sampathmenuka/X-NFT'
+  },
+  {
+    title: 'COFFEE – Artisan Coffee Shop Website',
+    badge: 'Demo',
+    description: 'A responsive coffee shop site built without frameworks, with a searchable menu, a slide-in cart that survives reloads, light and dark themes, a live "Open now" status and a contact form that validates as you type.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Intersection Observer', 'localStorage'],
+    image: '/assets/project_coffee.webp',
+    repoUrl: 'https://github.com/sampathmenuka/coffee_shop'
   }
 ];
 
-export const highlights = [
+export interface Award {
+  title: string;
+  place: string;
+  issuer: string;
+  date: string;
+  team: string;
+  location: string;
+  description: string;
+  certificate: string;
+}
+
+export const awards: Award[] = [
   {
-    title: 'REST APIs',
-    description: 'Designed and built production-grade RESTful APIs handling 10,000+ requests/day using Spring Boot and Node.js with full CRUD, pagination, and error handling.',
-    icon: <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
-  },
-  {
-    title: 'JWT Authentication',
-    description: 'Implemented secure JWT-based authentication and role-based access control (RBAC) across multiple full-stack projects including ParkSwift and PerfectCV.',
-    icon: <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z" />
-  },
-  {
-    title: 'Databases',
-    description: 'Experienced with SQL (MySQL + Hibernate/JPA) and NoSQL (MongoDB + Mongoose). Skilled in schema design, indexing, query optimization, and ORM mapping.',
-    icon: <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23V17zm0-4.55c-1.3.83-3.45 1.55-6 1.55s-4.7-.72-6-1.55v-2.27c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23v2.27zm-6-2.45C8.13 10 6 8.5 6 8s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2z" />
-  },
-  {
-    title: 'React Applications',
-    description: 'Built responsive, component-driven React.js frontends with hooks, state management, and third-party API integrations for real-world applications used by 200+ users.',
-    icon: <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+    title: 'International Hackathon on Emergency Medicine',
+    place: '3rd Place',
+    issuer: 'German Society for Emergency Medicine (DGINA)',
+    date: 'Jun 2026',
+    team: 'Team EMerge 2',
+    location: 'ICEM 2026 · Congress Center Hamburg, Germany',
+    description: 'Our team EMerge 2 secured 3rd place at the International Hackathon on Emergency Medicine, held during the 25th International Conference on Emergency Medicine (ICEM 2026) in Hamburg. An incredible experience of teamwork, innovation and solving real-world healthcare challenges, and I am grateful to my amazing teammates and everyone who made it possible.',
+    certificate: '/assets/award_icem_2026.webp'
   }
 ];
 
@@ -202,6 +248,8 @@ export interface ExperienceItem {
   organization: string;
   description: string[];
   image: string;
+  width: number;
+  height: number;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -212,7 +260,9 @@ export const experiences: ExperienceItem[] = [
       'Led and coordinated the NEXORA 1.0 project as Project Chair.',
       'Managed project planning, execution, and team coordination for successful event delivery.'
     ],
-    image: '/assets/NEXORA.png'
+    image: '/assets/NEXORA.webp',
+    width: 1000,
+    height: 1000
   },
   {
     title: 'Public Speaker',
@@ -221,7 +271,9 @@ export const experiences: ExperienceItem[] = [
       'Delivered presentations and shared insights on career development and professional growth.',
       'Engaged with students to provide guidance and mentorship on career pathways.'
     ],
-    image: '/assets/public_speaker.png'
+    image: '/assets/public_speaker.webp',
+    width: 699,
+    height: 618
   },
   {
     title: 'Instructor',
@@ -230,7 +282,9 @@ export const experiences: ExperienceItem[] = [
       'Conducted instructional sessions and workshops for students in the HOPE program.',
       'Provided technical guidance and support to help participants develop their skills.'
     ],
-    image: '/assets/hope.jpg'
+    image: '/assets/hope.webp',
+    width: 1000,
+    height: 750
   },
   {
     title: 'Logistics Team Member',
@@ -239,6 +293,8 @@ export const experiences: ExperienceItem[] = [
       'Coordinated logistics and operational aspects for IEEE Day celebrations.',
       'Ensured smooth execution of event activities and supported team operations.'
     ],
-    image: '/assets/logistic.jpg'
+    image: '/assets/logistic.webp',
+    width: 800,
+    height: 610
   }
 ];

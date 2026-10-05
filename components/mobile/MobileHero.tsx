@@ -10,24 +10,20 @@ export default function MobileHero() {
   return (
     <section id="m-home" aria-label="Introduction" className="space-y-4">
       {/* Profile card */}
-      <div className="glass gradient-border relative rounded-3xl overflow-hidden" data-aos="fade-up">
+      <div className="glass gradient-border relative rounded-3xl overflow-hidden">
         <div className="relative h-28 bg-linear-to-br from-green-accent/30 via-green-teal/10 to-cyan-accent/25">
           <div className="absolute inset-0 bg-grid" aria-hidden="true" />
-          <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-navy/60 backdrop-blur text-[11px] text-light-slate">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-green-accent opacity-75 animate-ping motion-reduce:animate-none"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-accent"></span>
-            </span>
-            Open to internships
-          </span>
         </div>
 
         <div className="relative px-5 pb-6 -mt-12">
           <div className="relative w-24 h-24">
             <div className="absolute -inset-1 rounded-full bg-linear-to-br from-green-accent via-green-teal to-cyan-accent" aria-hidden="true" />
             <img
-              src="/assets/myphoto.svg"
+              src="/assets/myphoto-avatar.webp"
               alt="Sampath Menuka"
+              width={96}
+              height={96}
+              fetchPriority="high"
               className="relative w-24 h-24 rounded-full object-cover object-top bg-dark-accent ring-4 ring-dark-accent"
             />
           </div>
@@ -49,7 +45,7 @@ export default function MobileHero() {
             </span>
           </div>
 
-          <p className="mt-4 text-[15px] leading-relaxed text-slate-gray">
+          <p className="mt-4 text-[0.9375rem] leading-relaxed text-slate-gray">
             I build modern web applications, from intuitive frontends to robust backends.
           </p>
 
@@ -91,7 +87,7 @@ export default function MobileHero() {
       <div className="glass rounded-3xl p-5" data-aos="fade-up">
         <SectionHeader eyebrow="About" title={<>A little <span className="text-gradient">about me</span></>} />
 
-        <div className="text-[15px] leading-relaxed text-slate-gray [&_strong]:text-light-slate [&_strong]:font-medium">
+        <div className="text-[0.9375rem] leading-relaxed text-slate-gray [&_strong]:text-light-slate [&_strong]:font-medium">
           <p>
             Hi there! I&apos;m Sampath Menuka Chandimal, a <strong>Software Engineering Undergraduate</strong> at Sabaragamuwa University of Sri Lanka. I specialize in building modern full-stack web applications using <strong>Next.js</strong>, <strong>Node.js</strong>, <strong>Spring Boot</strong>, and <strong>Java</strong>, with experience developing <strong>REST APIs</strong>, secure <strong>JWT authentication</strong>, responsive user interfaces, and well-structured <strong>databases</strong>.
           </p>

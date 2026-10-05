@@ -11,6 +11,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import Awards from '@/components/Awards';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -35,11 +36,12 @@ export default function Home() {
       <div className="hidden md:block">
         <Navbar />
         <Sidebars />
-        <main id="content" className="pt-24 px-2 lg:px-[9.375rem] space-y-6 sm:space-y-8" role="main">
+        <main id="content" className="pt-24 px-2 lg:px-6 xl:px-[9.375rem] space-y-2 sm:space-y-0" role="main">
           <Hero />
           <About />
           <Skills />
           <Projects />
+          <Awards />
           <Experience />
           <Contact />
         </main>
