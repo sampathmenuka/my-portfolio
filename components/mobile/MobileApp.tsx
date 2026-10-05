@@ -36,7 +36,7 @@ export default function MobileApp() {
         <p className="mt-3 text-xs text-slate-gray">
           Designed &amp; built by <span className="text-light-slate">Sampath Menuka</span>
         </p>
-        <p className="mt-1 text-[11px] text-slate-gray/70">© 2026 Sampath Menuka Chandimal. All rights reserved.</p>
+        <p className="mt-1 text-[11px] text-slate-gray">© 2026 Sampath Menuka Chandimal. All rights reserved.</p>
       </footer>
 
       <MobileTabBar active={active} />

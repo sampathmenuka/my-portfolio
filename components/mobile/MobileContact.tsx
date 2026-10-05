@@ -37,25 +37,25 @@ export default function MobileContact() {
   return (
     <section id="m-contact" aria-labelledby="m-contact-title">
       <SectionHeader id="m-contact-title" eyebrow="What's next?" title={<>Let&apos;s <span className="text-gradient">work together</span></>} />
-      <p className="-mt-2 mb-5 text-[15px] leading-relaxed text-slate-gray">
+      <p className="-mt-2 mb-5 text-[0.9375rem] leading-relaxed text-slate-gray">
         Whether you have a question, a project idea, or just want to connect, I&apos;m always happy to hear from you.
       </p>
 
       {/* Quick actions */}
-      <ul className="grid grid-cols-2 gap-3">
+      <ul className="grid grid-cols-2 gap-2.5">
         {quickActions.map((action) => (
           <li key={action.label}>
             <a
               href={action.href}
               {...(action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="glass h-full flex flex-col gap-3 p-4 rounded-2xl active:scale-[0.97] transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
+              className="glass h-full flex items-center gap-3 p-3 rounded-2xl active:scale-[0.97] transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
             >
-              <span className="w-10 h-10 flex items-center justify-center rounded-xl bg-linear-to-br from-green-accent/20 to-cyan-accent/10 text-green-accent ring-1 ring-green-accent/20">
+              <span className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-linear-to-br from-green-accent/20 to-cyan-accent/10 text-green-accent ring-1 ring-green-accent/20 [&_svg]:w-[18px] [&_svg]:h-[18px]">
                 {action.icon}
               </span>
               <span className="min-w-0">
-                <span className="block text-sm font-semibold text-lightest-slate">{action.label}</span>
-                <span className="block text-[11px] text-slate-gray truncate">{action.value}</span>
+                <span className="block text-sm font-semibold leading-tight text-lightest-slate">{action.label}</span>
+                <span className="mt-0.5 block text-[11px] leading-tight text-slate-gray truncate">{action.value}</span>
               </span>
             </a>
           </li>

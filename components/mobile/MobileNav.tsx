@@ -48,12 +48,12 @@ export function MobileHeader({ active }: { active: string }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled ? 'bg-dark-navy/75 backdrop-blur-xl border-white/10' : 'border-transparent'}`}
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled ? 'bg-dark-navy/85 backdrop-blur-2xl backdrop-saturate-150 border-white/10' : 'border-transparent'}`}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
       <div className="mx-auto max-w-2xl h-14 px-4 sm:px-6 flex items-center justify-between">
-        <a href="#m-home" className="logo-link flex items-center gap-2.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent" aria-label="Sampath Menuka - Home">
-          <img src="/assets/logo.png" alt="" className="h-8 w-8" />
+        <a href="#m-home" className="logo-link flex items-center gap-2.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent">
+          <img src="/assets/logo.png" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="leading-tight">
             <span className="block text-sm font-semibold text-lightest-slate tracking-tight">
               Sampath<span className="text-green-accent">.</span>
@@ -61,6 +61,7 @@ export function MobileHeader({ active }: { active: string }) {
             <span key={active} className="block text-[11px] font-mono text-slate-gray animate-[fadeIn_0.3s_ease]">
               ~/{current?.label.toLowerCase()}
             </span>
+            <span className="sr-only"> – back to top</span>
           </span>
         </a>
 

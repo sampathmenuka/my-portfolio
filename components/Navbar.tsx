@@ -8,6 +8,7 @@ const navLinks = [
   { href: '#about-me', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#awards', label: 'Awards' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -50,11 +51,11 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div
-            className={`flex justify-between items-center rounded-2xl px-4 md:px-5 h-14 transition-all duration-300 ${scrolled ? 'glass shadow-[0_8px_30px_rgba(0,0,0,0.35)]' : 'border border-transparent'}`}
+            className={`flex justify-between items-center rounded-2xl px-4 md:px-5 h-14 transition-all duration-300 ${scrolled ? 'bg-dark-navy/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)]' : 'border border-transparent'}`}
           >
-            <a href="#hero" className="logo-link flex items-center gap-2.5" aria-label="Sampath Menuka - Home">
-              <img src="/assets/logo.png" alt="Sampath Menuka Logo" className="h-8 w-8" />
-              <span className="hidden sm:inline font-semibold text-lightest-slate tracking-tight">
+            <a href="#hero" className="logo-link flex items-center gap-2.5" aria-label="Sampath. Home">
+              <img src="/assets/logo.png" alt="Sampath Menuka Logo" width={32} height={32} className="h-8 w-8" />
+              <span className="hidden lg:inline font-semibold text-lightest-slate tracking-tight">
                 Sampath<span className="text-green-accent">.</span>
               </span>
             </a>
@@ -65,7 +66,7 @@ export default function Navbar() {
                 <a
                   key={href}
                   href={href}
-                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent ${active === href ? 'bg-green-accent/15 text-green-accent' : 'text-slate-gray hover:text-lightest-slate'}`}
+                  className={`px-2.5 lg:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent ${active === href ? 'bg-green-accent/15 text-green-accent' : 'text-slate-gray hover:text-lightest-slate'}`}
                   aria-current={active === href ? 'page' : undefined}
                 >
                   {label}

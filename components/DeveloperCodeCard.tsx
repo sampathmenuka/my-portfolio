@@ -25,7 +25,7 @@ function FloatingBadge({ name, className, delay, duration, icon }: BadgeProps) {
 
 export default function DeveloperCodeCard() {
   return (
-    <div className="relative w-full max-w-md lg:max-w-lg mx-auto aspect-video sm:aspect-auto select-none group" data-aos="fade-left" data-aos-delay="300">
+    <div className="relative w-full max-w-md lg:max-w-lg mx-auto text-left aspect-video sm:aspect-auto select-none group" data-aos="fade-left" data-aos-delay="300">
       
       {/* Subtle background green glow */}
       <div className="absolute inset-0 bg-green-accent/5 rounded-2xl blur-3xl -z-10 group-hover:bg-green-accent/10 transition-all duration-700"></div>
@@ -146,7 +146,7 @@ export default function DeveloperCodeCard() {
       {/* MySQL Badge */}
       <FloatingBadge
         name="MySQL"
-        className="-bottom-7 left-[30%] border-[#00758f]/20 text-[#00758f]"
+        className="-bottom-7 left-[30%] border-[#00758f]/40 text-[#4cb8d4]"
         delay="2.5s"
         duration="4.8s"
         icon={<img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt="MySQL" className="w-3.5 h-3.5" />}

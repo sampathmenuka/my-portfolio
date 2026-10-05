@@ -4,7 +4,7 @@ export default function Sidebars() {
   return (
     <>
       {/* Left Social Sidebar */}
-      <div className="hidden lg:block fixed bottom-0 left-10 z-10 w-10">
+      <div className="hidden xl:block fixed bottom-0 left-10 z-10 w-10">
         <ul className="flex flex-col items-center gap-2 after:content-[''] after:block after:w-px after:h-24 after:bg-linear-to-b after:from-slate-gray/60 after:to-transparent after:mt-4">
           <li>
             <a
@@ -75,7 +75,7 @@ export default function Sidebars() {
       </div>
 
       {/* Right Email Sidebar */}
-      <div className="hidden lg:block fixed bottom-0 right-10 z-10 w-10">
+      <div className="hidden xl:block fixed bottom-0 right-10 z-10 w-10">
         <div className="flex flex-col items-center after:content-[''] after:block after:w-px after:h-24 after:bg-linear-to-b after:from-slate-gray/60 after:to-transparent after:mt-4">
           <a href="mailto:sampathwgw@gmail.com" className="p-1 text-slate-gray hover:text-green-accent hover:-translate-y-1 transition-all duration-200 [writing-mode:vertical-rl] tracking-widest font-mono text-sm block">
             sampathwgw@gmail.com

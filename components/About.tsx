@@ -7,7 +7,7 @@ export default function About() {
     <section id="about-me" className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-12">
       <SectionHeading index="01" label="About" title={<>A little <span className="text-gradient">about me</span></>} />
 
-      <div className="flex flex-col lg:flex-row gap-12 items-start lg:justify-between" data-aos="fade-up" data-aos-delay="100">
+      <div className="flex flex-col md:flex-row gap-12 md:gap-10 lg:gap-12 items-start md:items-center lg:items-start md:justify-between" data-aos="fade-up" data-aos-delay="100">
 
         {/* Left Column - Text and Info Cards */}
         <div className="flex-1 lg:max-w-2xl order-1 [&_strong]:text-light-slate [&_strong]:font-medium">
@@ -36,15 +36,15 @@ export default function About() {
         </div>
 
         {/* Right Column - Profile Image */}
-        <div className="shrink-0 w-full lg:w-75 flex justify-center order-2 mt-8 lg:mt-0">
-          <div className="relative group w-75 max-w-full transition-transform duration-500 hover:-translate-y-2">
+        <div className="shrink-0 w-full md:w-56 lg:w-75 flex justify-center order-2 mt-8 md:mt-0">
+          <div className="relative group w-75 md:w-56 lg:w-75 max-w-full transition-transform duration-500 hover:-translate-y-2">
 
             {/* Glow behind photo */}
             <div className="absolute -inset-4 bg-linear-to-br from-green-accent/25 via-green-teal/10 to-cyan-accent/25 rounded-[2rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
 
             {/* Photo container */}
             <div className="gradient-border relative rounded-3xl p-2 bg-dark-accent/80 backdrop-blur-xl">
-              <img src="/assets/myphoto.svg" alt="Sampath Menuka" className="w-full h-auto rounded-2xl block object-cover" />
+              <img src="/assets/myphoto.webp" alt="Sampath Menuka" width={600} height={800} loading="lazy" className="w-full h-auto rounded-2xl block object-cover" />
             </div>
 
             {/* Floating developer badge */}

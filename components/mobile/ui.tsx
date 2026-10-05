@@ -19,6 +19,7 @@ const iconPaths = {
   mapPin: <><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></>,
   cap: <><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" /></>,
   swipe: <><path d="M18 8l4 4-4 4" /><path d="M2 12h20" /></>,
+  medal: <><circle cx="12" cy="15" r="6" /><path d="M8.5 9.8 6 2h4l2 4 2-4h4l-2.5 7.8" /></>,
 };
 
 export type IconName = keyof typeof iconPaths;

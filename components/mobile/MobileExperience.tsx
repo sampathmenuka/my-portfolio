@@ -3,12 +3,15 @@
 import React, { useState } from 'react';
 import { experiences } from '@/lib/portfolio';
 import { Icon, SectionHeader } from './ui';
+import MobileAwards from './MobileAwards';
 
 export default function MobileExperience() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section id="m-journey" aria-labelledby="m-journey-title">
+      <MobileAwards />
+
       <SectionHeader
         id="m-journey-title"
         eyebrow="IEEE Activities"
@@ -33,9 +36,9 @@ export default function MobileExperience() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center gap-3 p-3 text-left rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-green-accent"
                 >
-                  <img src={exp.image} alt="" className="w-14 h-14 shrink-0 rounded-xl object-cover ring-1 ring-white/10 bg-dark-accent" loading="lazy" />
+                  <img src={exp.image} alt="" width={56} height={56} className="w-14 h-14 shrink-0 rounded-xl object-cover ring-1 ring-white/10 bg-dark-accent" loading="lazy" />
                   <span className="flex-1 min-w-0">
-                    <span className="block text-[15px] font-semibold tracking-tight text-lightest-slate">{exp.title}</span>
+                    <span className="block text-[0.9375rem] font-semibold tracking-tight text-lightest-slate">{exp.title}</span>
                     <span className="mt-0.5 block text-xs text-green-accent/90 truncate">{event}</span>
                   </span>
                   <span className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full transition-colors duration-300 ${isOpen ? 'bg-green-accent/15 text-green-accent' : 'bg-white/5 text-slate-gray'}`}>
@@ -51,7 +54,7 @@ export default function MobileExperience() {
                 <div className="overflow-hidden" inert={!isOpen}>
                   <div className="px-4 pb-4">
                     {branch.length > 0 && <p className="text-xs text-slate-gray">{branch.join(' – ')}</p>}
-                    <img src={exp.image} alt={`${exp.title} event`} className="mt-3 w-full h-auto rounded-xl ring-1 ring-white/10" loading="lazy" />
+                    <img src={exp.image} alt={`${exp.title} event`} width={exp.width} height={exp.height} className="mt-3 w-full h-auto rounded-xl ring-1 ring-white/10" loading="lazy" />
                     <ul className="mt-4 flex flex-col gap-2 text-sm text-slate-gray">
                       {exp.description.map((duty) => (
                         <li key={duty} className="flex gap-2.5">

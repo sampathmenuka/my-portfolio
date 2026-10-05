@@ -31,7 +31,7 @@ export default function Experience() {
                 </ul>
               </div>
               <div className="shrink-0 w-full md:w-50 order-1 md:order-2 overflow-hidden rounded-xl ring-1 ring-white/10">
-                <img src={exp.image} alt={`${exp.title} event`} className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+                <img src={exp.image} alt={`${exp.title} event`} width={exp.width} height={exp.height} className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
               </div>
             </div>
           </li>

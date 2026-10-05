@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { projects, highlights, socials } from '@/lib/portfolio';
+import { projects, socials } from '@/lib/portfolio';
+import ProjectPlaceholder from '../ProjectPlaceholder';
 import { Icon, SectionHeader } from './ui';
 
 const githubIcon = socials.find((s) => s.label === 'GitHub')?.icon;
@@ -65,24 +66,26 @@ export default function MobileProjects() {
               className="snap-start shrink-0 w-[85%] sm:w-[70%] glass rounded-3xl overflow-hidden flex flex-col"
               aria-label={`Project ${index + 1} of ${projects.length}`}
             >
-              {project.image && (
-                <div className="relative aspect-[16/10] bg-linear-to-br from-green-accent/10 via-dark-accent to-cyan-accent/10">
+              <div className="relative aspect-[16/10] overflow-hidden bg-linear-to-br from-green-accent/10 via-dark-accent to-cyan-accent/10">
+                {project.image ? (
                   <img src={project.image} alt={`${project.title} screenshot`} className="w-full h-full object-contain p-3" loading="lazy" />
-                  {project.badge && (
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-dark-navy/70 backdrop-blur border border-green-accent/20 text-[10px] font-semibold uppercase tracking-wider text-green-accent">
-                      {project.badge}
-                    </span>
-                  )}
-                  <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-dark-navy/60 backdrop-blur font-mono text-[11px] text-light-slate">
-                    0{index + 1}
+                ) : (
+                  <ProjectPlaceholder title={project.title} />
+                )}
+                {project.badge && (
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-dark-navy/70 backdrop-blur border border-green-accent/20 text-[10px] font-semibold uppercase tracking-wider text-green-accent">
+                    {project.badge}
                   </span>
-                </div>
-              )}
+                )}
+                <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-dark-navy/60 backdrop-blur font-mono text-[11px] text-light-slate">
+                  0{index + 1}
+                </span>
+              </div>
               <div className="p-5 flex-1 flex flex-col">
                 <h3 className="text-lg font-bold leading-snug tracking-tight text-lightest-slate">{name}</h3>
                 {subtitle && <p className="mt-0.5 text-xs font-medium text-green-accent/90">{subtitle}</p>}
-                <p className="mt-3 text-sm leading-relaxed text-slate-gray flex-1">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <p className="mt-3 text-sm leading-relaxed text-slate-gray">{project.description}</p>
+                <div className="mt-4 mb-5 flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <span key={tag} className="px-2 py-0.5 rounded-md text-[11px] font-mono text-light-slate bg-white/5 border border-white/10">
                       {tag}
@@ -93,7 +96,7 @@ export default function MobileProjects() {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 h-11 rounded-xl inline-flex items-center justify-center gap-2 text-sm font-medium bg-white/5 border border-white/10 text-lightest-slate active:bg-white/10 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
+                  className="mt-auto h-11 rounded-xl inline-flex items-center justify-center gap-2 text-sm font-medium bg-white/5 border border-white/10 text-lightest-slate active:bg-white/10 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{githubIcon}</svg>
                   View Repository
@@ -119,24 +122,6 @@ export default function MobileProjects() {
             <span className={`block h-1.5 rounded-full transition-all duration-300 ${current === index ? 'w-6 bg-green-accent' : 'w-1.5 bg-white/20'}`}></span>
           </button>
         ))}
-      </div>
-
-      {/* Technical highlights */}
-      <div className="mt-10">
-        <SectionHeader as="h3" eyebrow="Highlights" title={<>Technical <span className="text-gradient">Highlights</span></>} />
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {highlights.map((item) => (
-            <li key={item.title} className="glass rounded-2xl p-4 flex gap-4" data-aos="fade-up">
-              <span className="shrink-0 w-11 h-11 p-2.5 rounded-xl bg-linear-to-br from-green-accent/20 to-cyan-accent/10 text-green-accent ring-1 ring-green-accent/20">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{item.icon}</svg>
-              </span>
-              <span className="min-w-0">
-                <span className="block font-semibold text-lightest-slate tracking-tight">{item.title}</span>
-                <span className="mt-1 block text-[13px] leading-relaxed text-slate-gray">{item.description}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Content */}
-        <div className="min-h-75">
+        <div>
           <div key={activeTab} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 animate-[fadeIn_0.5s_ease]" role="tabpanel">
             {skillsData[activeTab].map((skill) => (
               <div

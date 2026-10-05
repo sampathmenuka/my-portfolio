@@ -51,6 +51,13 @@ body {
     color: #f0fdf4;
 }
 
+/* Very small phones (e.g. 320px): scale the whole rem-based layout down a touch */
+@media (max-width: 359px) {
+    html { font-size: 93.75%; }
+    /* Keep form fields at 16px so iOS doesn't zoom in on focus */
+    input, textarea, select { font-size: 16px; }
+}
+
 /* ===== Background layers ===== */
 .bg-grid {
     background-image:
@@ -142,6 +149,11 @@ body {
     50% { opacity: 0; }
 }
 
+@keyframes nudge {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 3px 0; }
+}
+
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -159,6 +171,10 @@ body {
 
 .cursor-blink {
     animation: blink 1s step-end infinite;
+}
+
+.hero-in {
+    animation: fadeIn 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 .animate-marquee {
@@ -187,5 +203,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .blob, .animate-float, .cursor-blink, .animate-marquee { animation: none; }
+    .blob, .animate-float, .cursor-blink, .animate-marquee, .hero-in { animation: none; }
 }
