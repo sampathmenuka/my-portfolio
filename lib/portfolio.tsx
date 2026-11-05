@@ -43,7 +43,7 @@ export const socials: Social[] = [
 ];
 
 export const stats = [
-  { value: '8+', label: 'Projects' },
+  { value: '10+', label: 'Projects' },
   { value: '25+', label: 'Technologies' },
   { value: '4+', label: 'IEEE volunteer roles' },
 ];
@@ -154,7 +154,8 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
-  repoUrl: string;
+  liveUrl?: string;
+  repoUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -186,6 +187,7 @@ export const projects: Project[] = [
     description: 'A crypto dashboard with live prices for the top 100 coins via the CoinGecko API, sparklines, search, interactive price charts and a saved watchlist. Shared API caching and lazy-loaded pages halved the initial JavaScript download.',
     tags: ['React 18', 'React Router', 'Vite', 'Chart.js', 'CoinGecko API'],
     image: '/assets/project_wils.webp',
+    liveUrl: 'https://cryptonews-kappa.vercel.app/',
     repoUrl: 'https://github.com/sampathmenuka/WILS-Crypto-News'
   },
   {
@@ -196,10 +198,25 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/sampathmenuka/simple-pos'
   },
   {
+    title: 'GoPA – GPA Tracker for University Students',
+    description: 'An unofficial, student-built GPA tracker for Sabaragamuwa University of Sri Lanka. Calculates semester, cumulative and final GPA as results are released, shows how each year contributes to your final standing, and flags repeat subjects early.',
+    tags: ['Next.js', 'React'],
+    image: '/assets/project_gopa.webp',
+    liveUrl: 'https://go-pa-lite.vercel.app/'
+  },
+  {
+    title: 'AI Tech Hub – AI & Productivity Subscription Store',
+    description: 'A storefront for AI and productivity subscriptions in Sri Lanka, with products organised by category and priced in rupees. Customers choose a product, then complete payment and delivery with support over WhatsApp.',
+    tags: ['Next.js', 'React'],
+    image: '/assets/project_ai_tech_hub.webp',
+    liveUrl: 'https://www.ai-tech-hub.tech/'
+  },
+  {
     title: 'Art Factory – Creative Studio Website',
     description: 'A responsive single-page site for an art studio, with an animated split-layout hero, scroll-reveal effects, an app-style mobile tab bar, an FAQ accordion and a validated contact form. Keyboard-accessible with reduced-motion support.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Lucide Icons'],
     image: '/assets/project_art_factory.webp',
+    liveUrl: 'https://artfactoryluma.vercel.app/',
     repoUrl: 'https://github.com/sampathmenuka/Art_Factory'
   },
   {
@@ -207,6 +224,7 @@ export const projects: Project[] = [
     description: 'A responsive, multi-page NFT marketplace with a dark neon design, a live auction countdown, a searchable and filterable gallery, and form validation with a password strength meter. Built mobile-first with swipeable card rows.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5'],
     image: '/assets/project_xnft.webp',
+    liveUrl: 'https://sampathmenuka.github.io/X-NFT/',
     repoUrl: 'https://github.com/sampathmenuka/X-NFT'
   },
   {
@@ -215,6 +233,7 @@ export const projects: Project[] = [
     description: 'A responsive coffee shop site built without frameworks, with a searchable menu, a slide-in cart that survives reloads, light and dark themes, a live "Open now" status and a contact form that validates as you type.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Intersection Observer', 'localStorage'],
     image: '/assets/project_coffee.webp',
+    liveUrl: 'https://sampathmenuka.github.io/coffee_shop/',
     repoUrl: 'https://github.com/sampathmenuka/coffee_shop'
   }
 ];

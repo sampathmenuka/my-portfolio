@@ -78,7 +78,7 @@ export default function MobileProjects() {
                   </span>
                 )}
                 <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-dark-navy/60 backdrop-blur font-mono text-[11px] text-light-slate">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, '0')}
                 </span>
               </div>
               <div className="p-5 flex-1 flex flex-col">
@@ -92,16 +92,31 @@ export default function MobileProjects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto h-11 rounded-xl inline-flex items-center justify-center gap-2 text-sm font-medium bg-white/5 border border-white/10 text-lightest-slate active:bg-white/10 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{githubIcon}</svg>
-                  View Repository
-                  <Icon name="arrowUpRight" className="w-4 h-4 text-green-accent" />
-                </a>
+                <div className="mt-auto flex flex-col gap-2">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-11 rounded-xl inline-flex items-center justify-center gap-2 text-sm font-medium bg-green-accent/10 border border-green-accent/30 text-green-accent active:bg-green-accent/20 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
+                    >
+                      Live Site
+                      <Icon name="arrowUpRight" className="w-4 h-4" />
+                    </a>
+                  )}
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-11 rounded-xl inline-flex items-center justify-center gap-2 text-sm font-medium bg-white/5 border border-white/10 text-lightest-slate active:bg-white/10 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-accent"
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{githubIcon}</svg>
+                      View Repository
+                      <Icon name="arrowUpRight" className="w-4 h-4 text-green-accent" />
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           );
